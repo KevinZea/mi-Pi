@@ -34,11 +34,12 @@ export class Buscador extends Component {
     render(){
         const {pais} = this.state;
         return (
-            <div>
+            <div className={"busca"}>
                 <h2>Busca tu pais</h2>
                 <form className="buscadorPais" onSubmit={(e) => this.handleSubmit(e)}>
-                    <div>
+                    <div className="lexico">
                         <input
+                        className="buscador"
                         type="text"
                         id="pais"
                         value={pais}
@@ -48,16 +49,17 @@ export class Buscador extends Component {
                     <button type="submit">Buscar</button>
 
                 </form>
-                
-                {this.props.paisDetalle.length > 0 ? (
-                    <div>
+                {!this.props.paisDetalle.message ? (
+                this.props.paisDetalle.length > 0 ? (
+                    <div className={"paisB"}>
                         <h2>Detalles de</h2>
-                        <Link to={'/'+ this.props.paisDetalle[0].name.common + '/'}>
-                        <h3>{this.props.paisDetalle[0].name.common}</h3>
+                        <Link to={'/paisDetalle/'+ this.props.paisDetalle[0].name + '/'}>
+                        <h3> º {this.props.paisDetalle[0].name} º </h3>
                         </Link>
-                        <h4>Continente: {this.props.paisDetalle[0].continents[0]}</h4>
+                        
                     </div>
-                ): <h3>intenta buscar un pais</h3>}
+                ): <h3>intenta buscar un pais</h3>
+                ): <h4>Pais no encontrado</h4>}
             </div>
         )
     }

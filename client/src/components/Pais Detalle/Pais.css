@@ -1,0 +1,40 @@
+.pais{
+    width: 800px;
+    height: 500px;
+    margin-top: 80px;
+    margin-left: 100px;
+    background-color: rgba(10, 10, 10, 0.519);
+    border: 2px solid rgba(243, 243, 0, 0.519);
+    color: antiquewhite;
+}
+.pais img{
+    width: 400px;
+    height: 300px;
+    border: 2px solid rgba(0, 28, 186, 0.519);
+    background-color: rgba(230, 230, 6, 0.06);
+    margin-left: 350px;
+    margin-top: 20px;
+}
+
+.pais h1{
+    color:aliceblue;
+    font-size:10vh;
+    margin-left: 300px;
+
+}
+.pais h3{
+    /* margin-top: -200px; */
+    font-size: 4vh;
+}
+.pais h4{
+    font-size: 4vh;
+}
+.info{
+    
+    margin-top: -300px;
+}
+
+.turisticas ul li {
+    margin-left: 30px;
+    font-size: 3vh;
+}

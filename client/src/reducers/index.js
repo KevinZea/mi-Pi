@@ -2,26 +2,37 @@ import{
     AGREGAR_ACTIVIDAD_TURISTICA,
     REMOVER_ACTIVIDAD_TURISTICA,
     GET_PAISES,
-    GET_PAIS_DETALLE
+    GET_PAIS_DETALLE,
+    GET_ACTIVIDAD
 }from "../actions/index";
 
 const initialState = {
     paises: [],
     paisDetalle: [],
-    actividadesTuristicas: []
+    actividadesTuristicas: [],
+    eliminados: []
 }
 
 function rootReducer(state = initialState, action){
+    if(action.type === GET_ACTIVIDAD){
+        let countryFilter = action.payload
+        
+        let aux = action.payload 
+        return{
+            ...state,
+            actividadesTuristicas: aux
+        }
+    }
     if(action.type === AGREGAR_ACTIVIDAD_TURISTICA){
         return{
             ...state,
-            actividadesTuristicas: [...state.actividadesTuristicas, action.payload]
+            
         }
     }
     if(action.type === REMOVER_ACTIVIDAD_TURISTICA){
         return{
             ...state,
-            actividadesTuristicas: state.actividadesTuristicas.filter((element) => {return element.id !== action.payload})
+            eliminados: action.payload
         }
     }
     if(action.type === GET_PAISES){
